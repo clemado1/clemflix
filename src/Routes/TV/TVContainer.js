@@ -7,7 +7,7 @@ export default class extends React.Component {
         topRated: null,
         popular: null,
         airingToday: null,
-        loading: null,
+        loading: true,
         error: null
     };
 
@@ -42,7 +42,7 @@ export default class extends React.Component {
 
     render() {
         const{ topRated, popular, airingToday, loading, error } = this.state;
-        console.log(this.state);
+   
         return <TVPresenter 
         topRated={topRated}
         popular={popular}

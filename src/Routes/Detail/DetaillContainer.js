@@ -10,8 +10,8 @@ export default class extends React.Component {
         } = props;
         this.state = {
             result: null,
-            loading: null,
-            error: true,
+            loading: true,
+            error: null,
             isMovie: pathname.includes("/movie/")
         };
     }
@@ -41,8 +41,6 @@ export default class extends React.Component {
                 const request = await tvApi.showDetail(parseId);
                 result = request.data;
             }
-
-            console.log(result);
 
         }catch{
             this.setState({

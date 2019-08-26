@@ -7,7 +7,7 @@ export default class extends React.Component {
         movieResults: null,
         tvResults: null,
         searchTerm: "",
-        loading: null,
+        loading: false,
         error: null
     };
     
@@ -52,7 +52,7 @@ export default class extends React.Component {
 
     render() {
         const{ movieResults, tvResults, searchTerm, loading, error } = this.state;
-        console.log(this.state);
+       
         return <SearchPresenter 
         movieResults={movieResults}
         tvResults={tvResults}
