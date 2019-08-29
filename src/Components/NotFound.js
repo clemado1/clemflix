@@ -9,7 +9,7 @@ const Container = styled.div`
 `;
 
 const Text = styled.span`
-    color: #e74c3c;
+    color: #95a5a6;
     font-weight: 600;
 `;
 
