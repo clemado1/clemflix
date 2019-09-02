@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import Helmet from "react-helmet";
 import Loader from "../../Components/Loader";
-import Message from '../../Components/Message';
+import Message from "../../Components/Message";
 
 const Container = styled.div`
   height: calc(100vh - 50px);
@@ -53,7 +53,7 @@ const Title = styled.h3`
 `;
 
 const ItemContainer = styled.div`
-    margin: 20px 0;
+  margin: 20px 0;
 `;
 
 const Item = styled.span``;
@@ -63,10 +63,10 @@ const Divider = styled.span`
 `;
 
 const Overview = styled.p`
-    font-size: 12px;
-    opacity: 0.7;
-    line-height: 1.5;
-    width: 50%;
+  font-size: 12px;
+  opacity: 0.7;
+  line-height: 1.5;
+  width: 50%;
 `;
 
 const DetailPresenter = ({ result, loading, error }) =>
@@ -77,13 +77,15 @@ const DetailPresenter = ({ result, loading, error }) =>
       </Helmet>
       <Loader />
     </>
-  ) : 
-    error ? (<Message text={error} color="#e74c3c" /> ) : (
-      <Container>
+  ) : error ? (
+    <Message text={error} color="#e74c3c" />
+  ) : (
+    <Container>
       <Helmet>
-        <title>{result.original_title
-              ? result.original_title
-              : result.original_name} | Clemflix</title>
+        <title>
+          {result.original_title ? result.original_title : result.original_name}{" "}
+          | Clemflix
+        </title>
       </Helmet>
       <Backdrop
         bgImage={`https://image.tmdb.org/t/p/original/${result.backdrop_path}`}
@@ -122,16 +124,11 @@ const DetailPresenter = ({ result, loading, error }) =>
                 )}
             </Item>
           </ItemContainer>
-          
-          <Overview>
-                {result.overview}
-            </Overview>
+          <Overview>{result.overview}</Overview>
         </Data>
       </Content>
     </Container>
-    )
-  ;
-
+  );
 DetailPresenter.propTypes = {
   result: PropTypes.object,
   loading: PropTypes.bool.isRequired,
